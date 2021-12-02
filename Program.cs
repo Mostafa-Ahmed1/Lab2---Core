@@ -1,7 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using Lab2___Core.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ITIContext>(n=>n.UseSqlServer(builder.Configuration.GetConnectionString("iticon")));
 
 var app = builder.Build();
 
@@ -27,4 +31,4 @@ app.MapControllerRoute(
 app.Run();
 
 
-//Scaffold-DbContext "Server=localdb;Database=Blogging;Trusted_Connection=True;"Microsoft.EntityFrameworkCore.SqlServer - OutputDir Models
+//Scaffold-DbContext "Server=DESKTOP-97RANSU\MOSTAFA;Database=ITI;Trusted_Connection=True;"Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
