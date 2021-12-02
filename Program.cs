@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<ITIContext>(n=>n.UseSqlServer(builder.Configuration.GetConnectionString("iticon")));
+builder.Services.AddDbContext<ITIContext>(n=>n.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("iticon")));
 
 var app = builder.Build();
 

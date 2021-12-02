@@ -7,7 +7,7 @@ namespace Lab2___Core.Models
 {
     public partial class ITIContext : DbContext
     {
-        ITIContext db;
+        
         public ITIContext()
         {
         }
